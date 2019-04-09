@@ -45,7 +45,6 @@ class App extends Component {
     super();
     this.state = initialState;
     }
-  }
 
   loadUser = (data) => {
     this.setState({user: {
@@ -58,11 +57,11 @@ class App extends Component {
   }
 
   calcFaceLocation = (data) => {
-    return data.outputs[0].data.regions.map(face => {
-      const clarifaiFace = face.region_info.bounding_box;
     const image = document.getElementById('inputimage');
     const width = Number(image.width);
     const height = Number(image.height);
+    return data.outputs[0].data.regions.map(face => {
+      const clarifaiFace = face.region_info.bounding_box;
       return {
         leftCol: clarifaiFace.left_col * width,
         topRow: clarifaiFace.top_row * height,
