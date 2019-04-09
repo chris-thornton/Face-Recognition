@@ -14,13 +14,16 @@ const FaceRecognition = ({ imageUrl, boxes }) => {
 	return (
 		<div className='ma2 absolute maxWidth' style={divCenter}>
 		<div style={divNext}>
-		  <img id="inputimage" alt='' src ={imageUrl} height='auto'/>
-		  {boxes.map(box =>
+		  <img id="inputimage" alt='' src={imageUrl} height='auto'/>
+		  {boxes.map(box => {
+		  	return
           <div key={`box${box.topRow}${box.rightCol}`}
               className='bounding-box'
-              style={{top: box.topRow, right: box.rightCol, bottom: box.bottomRow, left: box.leftCol}}>
+              style={{top: box.topRow, right: box.rightCol, 
+              	bottom: box.bottomRow, left: box.leftCol}}>
           </div>
-        )}
+        })
+		}
 		  </div>
 		  </div>
 	);
