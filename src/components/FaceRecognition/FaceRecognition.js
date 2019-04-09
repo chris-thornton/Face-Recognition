@@ -10,13 +10,17 @@ const divNext = {
 	left: '-50%'
 };
 
-const FaceRecognition = ({ imageUrl, box }) => {
+const FaceRecognition = ({ imageUrl, boxes }) => {
 	return (
 		<div className='ma2 absolute maxWidth' style={divCenter}>
 		<div style={divNext}>
 		  <img id="inputimage" alt='' src ={imageUrl} height='auto'/>
-		  <div className='bounding-box' style={{top: box.topRow, right: box.rightCol, bottom: box.botRow, left: box.leftCol}}>
-		  </div>
+		  {boxes.map(box =>
+          <div key={`box${box.topRow}${box.rightCol}`}
+              className='bounding-box'
+              style={{top: box.topRow, right: box.rightCol, bottom: box.bottomRow, left: box.leftCol}}>
+          </div>
+        )}
 		  </div>
 		  </div>
 	);
