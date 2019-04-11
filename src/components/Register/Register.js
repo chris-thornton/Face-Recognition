@@ -23,6 +23,13 @@ class Register extends React.Component {
 	}
 
 	onSubmitSignIn = () => {
+		const emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		if (!this.state.email || !this.state.name || !this.state.password) {
+			return alert("Please fill out all fields");
+		}
+		if (!this.state.email.match(emailFormat)) {
+			return alert("Invalid email address");
+		}
 		fetch('https://morning-reaches-66450.herokuapp.com/register', {
 			method: 'post',
 			headers: {'Content-Type': 'application/json'},
