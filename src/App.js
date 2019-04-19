@@ -23,6 +23,7 @@ const particlesOptions = {
 
 const flex = {
   display: 'flex',
+  flexWrap: 'wrap'
 };
 
 const initialState = {

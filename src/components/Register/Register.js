@@ -28,7 +28,7 @@ class Register extends React.Component {
 			return alert("Please fill out all fields");
 		}
 		if (!this.state.email.match(emailFormat)) {
-			return alert("Invalid email address");
+			return alert("Invalid email format");
 		}
 		fetch('https://morning-reaches-66450.herokuapp.com/register', {
 			method: 'post',

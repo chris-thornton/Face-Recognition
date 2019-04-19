@@ -1,7 +1,9 @@
 import React from 'react';
 
 const divRight = {
-	marginLeft: 'auto'
+	marginLeft: 'auto',
+	width: '18vw',
+	minWidth: '300px'
 };
 
 class SignIn extends React.Component {
@@ -43,11 +45,12 @@ class SignIn extends React.Component {
 	  const { onRouteChange } = this.props;
 	return (
 		<div style={divRight}>
-		<article className="br3 ma2 ba dark-gray b--black-10 mv4 w-85 mr3 shadow-5">
+		<article className="br3 ma2 ba dark-gray b--black-10 mv4 mr3 shadow-5">
 		<main className="pa4 black-80">
 		  <div className="measure center">
 		    <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-		      <legend className="f3 fw6 ph0 mh0">Sign In</legend>
+		      <legend className="fw6 ph0 mh0" 
+		      style={{fontSize: 'calc(16px + .75vw)'}}>Sign In</legend>
 		      <div className="mt3">
 		        <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
 		        <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
@@ -71,7 +74,8 @@ class SignIn extends React.Component {
 		    </div>
 		    <div className="lh-copy mt3">
 		      <p onClick={() => onRouteChange('register')} 
-		      className="f6 link dim black db pointer">Register</p>
+		      className="link dim black db pointer"
+		      style={{fontSize: 'calc(10px + .75vw)'}}>Register</p>
 		    </div>
 		  </div>
 		</main>
